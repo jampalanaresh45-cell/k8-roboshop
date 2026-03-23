@@ -118,15 +118,13 @@ spec:
           periodSeconds: 10
         volumeMounts:
         - name: nginx-config
-          mountPath: /etc/nginx/default.conf
+          mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
       volumes:
       - name: nginx-config
         configMap:
           name: frontend
-          items:
-          - key: nginx.conf
-            path: nginx.conf
+
 ---
 apiVersion: v1 
 kind: Service
