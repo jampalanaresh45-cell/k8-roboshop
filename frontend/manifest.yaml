@@ -51,7 +51,8 @@ kind: Service
 metadata:
     name: frontend
     namespace: roboshop
-spec:    
+spec:  
+    type: LoadBalancer  
     selector:
       project: roboshop
       component: frontend
