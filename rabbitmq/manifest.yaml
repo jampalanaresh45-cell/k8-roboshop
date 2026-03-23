@@ -27,7 +27,12 @@ spec:
     spec:
       containers:
       - name: rabbitmq
-        image: rabbitmq:3 
+        image: rabbitmq:3
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: "roboshop"
+        - name: RABBITMQ_DEFAULT_PASSWORD
+          value: "roboshop123"
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
